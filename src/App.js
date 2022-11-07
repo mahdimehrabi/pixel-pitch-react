@@ -123,7 +123,6 @@ function App() {
             "cabinet resolution",
             "lamp type"
         ]);
-        console.log(dt)
 
         var doc = new jsPDF({ putOnlyUsedFonts: true, orientation: "landscape" });
         doc.table(1, 1, dt, headers, { autoSize: true });
@@ -137,18 +136,18 @@ function App() {
                     <label htmlFor="pixel-pitch">pixel pitch:</label>
                     <input type="number" step="any" id="pixel-pitch" className="form-control"
                            placeholder="pixel pitch"
-                           value={data.pixelPitch} onChange={handleChangePixelPitch}/>
+                           value={data.pixelPitch==0?"":data.pixelPitch} onChange={handleChangePixelPitch}/>
                 </div>
                 <label>cabinet size:</label>
                 <div className="row">
                     <div className="col-md-6">
                         <input type="number" id="cabinet-size-width" className="form-control"
-                               value={data.cbSizeWidth} onChange={handleChangeCabinetSizeWidth}
+                               value={data.cbSizeWidth==0?"":data.cbSizeWidth} onChange={handleChangeCabinetSizeWidth}
                                placeholder="width"/>
                     </div>
                     <div className="col-md-6">
                         <input type="number" id="cabinet-size-height" className="form-control"
-                               value={data.cbSizeHeight} onChange={handleChangeCabinetSizeHeight}
+                               value={data.cbSizeHeight==0?"":data.cbSizeHeight} onChange={handleChangeCabinetSizeHeight}
                                placeholder="height"/>
                     </div>
                 </div>
@@ -156,12 +155,12 @@ function App() {
                 <div className="row">
                     <div className="col-md-6">
                         <input type="number" id="screen-dimension-width"
-                               value={data.scDimensionWidth} onChange={handleChangescDimensionWidth}
+                               value={data.scDimensionWidth==0?"":data.scDimensionWidth} onChange={handleChangescDimensionWidth}
                                className="form-control" placeholder="width"/>
                     </div>
                     <div className="col-md-6">
                         <input type="number" id="screen-dimension-height" className="form-control"
-                               value={data.scDimensionHeight} onChange={handleChangescDimensionHeight}
+                               value={data.scDimensionHeight==0?"":data.scDimensionHeight} onChange={handleChangescDimensionHeight}
                                placeholder="height"/>
                     </div>
                 </div>
@@ -169,7 +168,7 @@ function App() {
                 <div className="form-group mt-3">
                     <label htmlFor="lamp-type">lamp type:</label>
                     <input type="text" id="lamp-type" className="form-control"
-                           value={data.lampType} onChange={handleChangelampType}
+                           value={data.lampType==""?"":data.lampType} onChange={handleChangelampType}
                            placeholder="lamp type"/>
                 </div>
 
@@ -177,12 +176,12 @@ function App() {
                 <div className="row mb-2">
                     <div className="col-md-6">
                         <input type="number" id="cabinet-count-width" className="form-control"
-                               value={data.cbCountWidth} onChange={handleChangecbCountWidth}
+                               value={data.cbCountWidth==0?"":data.cbCountWidth} onChange={handleChangecbCountWidth}
                                placeholder="width"/>
                     </div>
                     <div className="col-md-6">
                         <input type="number" id="cabinet-count-height" className="form-control"
-                               value={data.cbCountHeight} onChange={handleChangecbCountHeight}
+                               value={data.cbCountHeight==0?"":data.cbCountHeight} onChange={handleChangecbCountHeight}
                                placeholder="height"/>
                     </div>
                 </div>
